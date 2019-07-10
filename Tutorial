@@ -1,0 +1,8 @@
+1-Open the proyect with your favorite IDE, i use Eclipse.
+2-Check the files in the proyect.
+	-LiquibaseHelper.java -> main file, but not executable
+	-db.changeLog.xml -> this is a config of liquibase log.
+	-db-username.properties= database config. i use many drivers and you can replace too.
+	-LiquibaseHelperTest.java -> run this file on junit test
+	-h2-reset.sql -> an example of script to liquibase take and run.
+	-pom.xml -> here is the maven repo reference and when you add the dependencies.
