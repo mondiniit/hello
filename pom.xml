@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Hello</groupId>
-	<artifactId>Hello</artifactId>
+	<groupId>Hello</groupId><!--Put here oyur groupId name-->
+	<artifactId>Hello</artifactId><!--Put here your artifact name-->
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
@@ -11,25 +11,6 @@
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 			<version>3.6.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>5.1.8.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.199</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.12.2</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
