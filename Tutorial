@@ -6,3 +6,4 @@
 	-LiquibaseHelperTest.java -> run this file on junit test
 	-h2-reset.sql -> an example of script to liquibase take and run.
 	-pom.xml -> here is the maven repo reference and when you add the dependencies.
+	-To run in the terminal/cmd tipe java -jar Hello-0.0.1-SNAPSHOT.jar 

@@ -5,8 +5,6 @@ import java.util.stream.Collectors;
 
 import javax.sql.DataSource;
 
-//import fr.patouche.soat.LiquibaseHelper;
-//import fr.patouche.soat.LiquibaseHelper.LiquibaseAction;
 import liquibase.Contexts;
 import liquibase.Liquibase;
 import liquibase.database.jvm.JdbcConnection;
@@ -30,7 +28,8 @@ public class LiquibaseHelper {
         this.dataSource = dataSource;
     }
 
-    /**
+
+	/**
      * Retrieve a liquibase instance.
      *
      * @return the liquibase instance.
@@ -38,6 +37,7 @@ public class LiquibaseHelper {
     protected <O> O liquibaseResult(final LiquibaseAction<O> action) {
         try (final Connection c = this.dataSource.getConnection()) {
             final Liquibase liquibase = new Liquibase(DB_CHANGELOG, new ClassLoaderResourceAccessor(), new JdbcConnection(c));
+            System.out.println("liquibaseResult->"+liquibase.getDatabase());
             return action.execute(liquibase);
         } catch (SQLException | LiquibaseException e) {
             throw new RuntimeException("Error during liquibase execution", e);
