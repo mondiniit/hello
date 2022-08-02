@@ -7,6 +7,14 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('install') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+
     stage("build & SonarQube aalysis") {
           node {
               withSonarQubeEnv('My SonarQube Server') {
