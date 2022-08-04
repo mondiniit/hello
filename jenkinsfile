@@ -6,24 +6,21 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-    }
-    stages {
         stage('install') {
             steps {
                 sh 'mvn clean install'
             }
         }
-    }
 
-    stage("build & SonarQube") {
+        stage("build & SonarQube") {
           node {
               withSonarQubeEnv('My SonarQube Server') {
                  sh 'mvn clean package sonar:sonar'
               }
           }
-      }
+        }
 
-      stage("Quality Gate"){
+        stage("Quality Gate"){
           timeout(time: 1, unit: 'HOURS') {
               def qg = waitForQualityGate()
               if (qg.status != 'OK') {
@@ -31,4 +28,5 @@ pipeline {
               }
           }
       }
+}
 }
