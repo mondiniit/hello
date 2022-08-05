@@ -16,27 +16,5 @@ pipeline {
                 sh 'mvn test'
             }
         }
-<<<<<<< HEAD:jenkinsfile
     }
 }
-=======
-
-        stage("build & SonarQuube") {
-          node {
-              withSonarQubeEnv('My SonarQube Serer') {
-                 sh 'mvn clean package sonar:sonar'
-              }
-          }
-        }
-
-        stage("Quality Gate"){
-          timeout(time: 1, unit: 'HOURS') {
-              def qg = waitForQualityGate()
-              if (qg.status != 'OK') {
-                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
-              }
-          }
-      }
-}
-}
->>>>>>> 88869057d33abd418e3d4b266dd380eb1270c555:Jenkinsfile
