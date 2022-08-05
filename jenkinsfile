@@ -11,6 +11,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('install') {
+            steps {
+                sh 'mvn clean update'
+            }
+        }
 
         stage("build & SonarQube") {
           node {
