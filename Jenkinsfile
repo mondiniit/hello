@@ -1,19 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('install') {
+        stage('package') {
             steps {
-                sh 'mvn clean build'
-            }
-        }
-        stage('clean package') {
-            steps {
-                sh 'mvn clean package'
+                sh 'mvn package'
             }
         }
         stage('clean build') {
             steps {
-                sh 'mvn clean deploy'
+                sh 'mvn clean dependency:copy-dependencies package'
             }
         }
     }
