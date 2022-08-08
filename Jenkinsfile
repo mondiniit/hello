@@ -1,27 +1,29 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('one') {
             steps {
                 script {
                     echo 'Hello World'
                 }
             }
         }
-         stage('install') {
+         stage('two') {
             steps {
                 sh 'mvn install'
             }
         }
-        stage('package') {
+        stage('three') {
             steps {
                 sh 'mvn compile'
             }
         }
-        stage('clean build') {
-            script {
+        stage('four') {
+            steps {
+                script {
                     echo 'clean build'
                 }
+            }
         }
     }
 }
